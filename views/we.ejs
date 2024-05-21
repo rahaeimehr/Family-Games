@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Code Verification</title>
+</head>
+<body>
+    <% if (correctPin !==2) { %>    
+    <h1>Pin Code Verification</h1>
+    <form action="/verify" method="POST">
+        <label for="pin">Enter Pin Code:</label>
+        <input type="text" id="pin" name="pin">
+        <button type="submit">Submit</button>
+    </form>
+    <% if (correctPin === 1) { %>    
+        <span style="color:red">The pin is not correct!</span>
+    <% } 
+    }%>
+
+    <% if (correctPin ===2) { %>
+        <div dir="rtl" style="max-width: 500px; margin: auto;">
+            <h1>test</h1>
+            
+        </div>
+    <% } %>
+</body>
+</html>
