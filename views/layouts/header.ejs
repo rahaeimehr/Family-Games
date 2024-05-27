@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/ellie.webp" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Games</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Family Games World!</h1>
+  </header>
+  <section id="login-section">
+        <form id="loginForm" action="/login" method="POST">
+          <input type="text" id="username" name="username" required placeholder="Username"> 
+          <input type="password" id="password" name="password" required placeholder="Password">
+          <button type="submit">Login</button>
+          <div class="together-elements">
+                <a href="/forget-password">Forget?</a>        
+                <a href="/register">Register</a>        
+          </div>
+        </form> 
+  </section>

@@ -15,6 +15,7 @@
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "geoip-lite": "^1.4.10",
+    "mysql2": "^3.9.7",
     "socket.io": "^4.7.5"
   },
   "devDependencies": {
