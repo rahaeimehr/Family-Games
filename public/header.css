@@ -1,0 +1,46 @@
+header {
+    display: flex;
+    position: relative;
+    background-color: #ffcc00;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    flex: 1;
+    font-size: 36px;
+    margin: 0;
+}
+
+#User-Management{    
+    padding: 10px;
+    background-color: pink;
+    margin: 0px 10px;
+}
+
+#User-Management a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: blueviolet;
+    border: 1px solid black;
+    box-shadow: 2px 2px 1px gray;
+    padding: 3px 10px;
+    color: white;
+    margin: 0px 5px;
+    border-radius: 5px;
+}
+
+#User-Management a:hover,#User-Management a:active{
+    background-color: purple;
+}
+
+@media (max-width:500px) {
+    header {
+        flex-direction: column;
+        padding-bottom: 0px;
+    }
+    #User-Management{    
+        margin: 0px;
+    }
+    
+}

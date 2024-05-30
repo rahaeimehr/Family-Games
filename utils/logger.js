@@ -1,8 +1,9 @@
 const fs = require('fs');
+const moment = require('moment-timezone');
 
 function writeToLog(message, ip, deviceType, city, address) {
-  const timestamp = new Date().toISOString();
-  const logMessage = ` [${city}] [${address}]  ${timestamp} [${ip}] [${deviceType}]: ${message}`;
+  const timestamp = moment().tz("America/New_York").format('YYYY-MM-DD HH:mm:ss');
+  const logMessage = ` ${timestamp} ${city} ${address} ${ip} ${deviceType} \n   : ${message}`;
   fs.appendFile('log.txt', logMessage + '\n', (err) => {
     if (err) throw err;
     console.log('Message logged to log.txt');
@@ -10,8 +11,8 @@ function writeToLog(message, ip, deviceType, city, address) {
 }
 
 function writeText(message) {
-  const timestamp = new Date().toISOString();
-  const logMessage = `${message}`;
+  const timestamp = moment().tz("America/New_York").format('YYYY-MM-DD HH:mm:ss');
+  const logMessage = `${timestamp} ${message}`;
   fs.appendFile('log.txt', logMessage + '\n', (err) => {
     if (err) throw err;
     console.log('Message logged to log.txt');

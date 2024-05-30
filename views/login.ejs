@@ -5,7 +5,7 @@
     <form action="/login" method="POST">
       <div class="input-group">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" required value="<%=formData.username%>">
       </div>
       <div class="input-group">
         <label for="password">Password</label>
@@ -13,6 +13,11 @@
       </div>
       <button type="submit">Login</button>
     </form>
+    <% if(status == 1) {%>
+      <span class="error"><%=error%></span>
+      <a href="/forget-password">Need help?</a>
+    <% } %>
+
   </div>
 </div>
   <%- include('layouts/footer') %>

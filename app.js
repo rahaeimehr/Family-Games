@@ -7,6 +7,7 @@ const socketIo = require('socket.io');
 const logger = require('./utils/logger');
 const { checkIP } = require('./utils/ipChecker');
 const sessionMiddleware = require('./middlewares/session');
+
 const userRoutes = require('./routes/userRoutes'); // Import user routes
 
 const app = express();
@@ -22,6 +23,18 @@ app.use((req, res, next) => {
   res.set('Pragma', 'no-cache');
   res.set('Expires', '0');
   res.set('Surrogate-Control', 'no-store');
+  const ipInfo = checkIP(req.ip, req.headers['user-agent']);
+  
+  with(ipInfo) {
+    logger.writeText(`${city} ${ip} ${req.url}\n --> ${deviceType}`);
+  }  
+  next();
+});
+
+app.use((req, res, next) => {
+  try{
+    res.locals.user = req.session.user;
+  }catch {}
   next();
 });
 

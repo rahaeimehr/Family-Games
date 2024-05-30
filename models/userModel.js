@@ -1,22 +1,46 @@
 const db = require('../config/db');
+const bcrypt = require('bcrypt');
 
 const User = {
-  create: (userData, callback) => {
-    const query = `INSERT INTO tblUsers (username, email, phone_number, password_hash, screen_name, security_code) VALUES (?, ?, ?, ?, ?, ?)`;
+  create: async (userData) => {
+    const query = `INSERT INTO tblUsers (username, screen_name, email, phone_number, password_hash, security_code) VALUES (?, ?, ?, ?, ?, ?)`;
     const values = [
       userData.username,
+      userData.screen_name,
       userData.email,
       userData.phone_number,
-      userData.password,
-      userData.username,
+      userData.password, // Ensure password is already hashed before this point
       Math.floor(Math.random() * 1000000)
     ];
-    db.query(query, values, (err, result) => {
-      if (err) {
-        return callback(err, null);
+
+    try {
+      const [result] = await db.query(query, values);
+      return result;
+    } catch (err) {
+      throw err;
+    }
+  },
+
+  login: async (username, password) => {
+    const query = `SELECT * FROM tblUsers WHERE username = ?`;
+
+    try {
+      const [results] = await db.query(query, [username]);
+
+      if (results.length === 0) {
+        return false; // User not found
       }
-      callback(null, result);
-    });
+
+      const user = results[0];
+      const isMatch = await bcrypt.compare(password, user.password_hash);
+      if (isMatch) {
+        return user; // Passwords match, login successful
+      } else {
+        return false; // Passwords do not match
+      }
+    } catch (err) {
+      throw err;
+    }
   }
 };
 

@@ -21,18 +21,6 @@ html, body {
     background-color: #f1f1f1;
   }
 
-header {
-    background-color: #ffcc00;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-}
-
-header h1 {
-    font-size: 36px;
-    margin: 0;
-}
-
 .together-elements{
     display: inline-block;
 }

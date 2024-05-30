@@ -3,3 +3,4 @@ log.txt
 *.pem
 *.key
 *.pub
+*.cer

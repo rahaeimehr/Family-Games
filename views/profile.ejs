@@ -1,0 +1,15 @@
+<%- include('layouts/header') %>
+  <% if (status !==2) 
+  { %>
+  <div class="CenterInThePage">  
+      <div class="form-container">  
+        <h2>Profile</h2>
+      </div>
+  </div>
+  <%
+  } else {
+  %>
+    <h1>Congratulations! You are registered!</h1>
+    <h2>Enjoy our website!</h2>
+  <% } %>
+<%- include('layouts/footer') %>
