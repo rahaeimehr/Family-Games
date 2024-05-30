@@ -9,6 +9,13 @@ exports.registerForm = (req, res) => {
   res.render('register',{status:0, userData:userData});
 };
 
+exports.loginForm = (req, res) => {
+  const formData = {
+    username: ''
+  };  
+  res.render('login',{status:0, formData:formData});
+};
+
 exports.registerUser = (req, res) => {
   const userData = {
     username: req.body.username,

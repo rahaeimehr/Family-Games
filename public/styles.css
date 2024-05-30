@@ -11,7 +11,7 @@ html, body {
     background-color: #f0f0f0;
   }
   
-  main {
+  .FromMenuToFooter {
     flex: 1;
   }
   
@@ -32,11 +32,7 @@ header h1 {
     font-size: 36px;
     margin: 0;
 }
-#login-section{
-    background-color: #fc7878;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
+
 .together-elements{
     display: inline-block;
 }
@@ -104,6 +100,15 @@ footer {
     display: grid;
     grid-template-columns: auto auto;
 }
+
+.CenterInThePage{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 .error{
     color: red;
 }
@@ -111,3 +116,52 @@ footer {
 .largeFont{
     font-size: xx-large;
 }
+
+
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    background-color: aquamarine;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+ .form-container h2{
+    text-align: left;
+    margin-top: 0px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .form-container button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #ffbb00;
+  }
+  
+

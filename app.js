@@ -17,15 +17,27 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  res.set('Surrogate-Control', 'no-store');
+  next();
+});
+
 const server = https.createServer({
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem'),
+  key: fs.readFileSync('rahaeimehr.key'),
+  cert: fs.readFileSync('rahaeimehr.cer'),
   passphrase: 'test'
 }, app);
 const io = socketIo(server);
 
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+app.get('/chat', (req, res) => {
+  res.render('chat');
 });
 
 app.get('/we', (req, res) => {

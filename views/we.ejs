@@ -1,4 +1,4 @@
-<% include layouts/header %>
+<%- include('layouts/header') %>
     <% if (correctPin !==2) { %>    
     <h1>Pin Code Verification</h1>
     <form action="/verify" method="POST">
@@ -17,5 +17,4 @@
             
         </div>
     <% } %>
-</body>
-</html>
+<%- include('layouts/footer') %>
