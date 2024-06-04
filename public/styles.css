@@ -12,6 +12,8 @@ html, body {
   }
   
   .FromMenuToFooter {
+    background-color: gray;
+    margin: auto;
     flex: 1;
   }
   

@@ -53,6 +53,10 @@ app.get('/chat', (req, res) => {
   res.render('chat');
 });
 
+app.get('/games', (req, res) => {
+  res.render('games');
+});
+
 app.get('/we', (req, res) => {
   res.render('we', { correctPin: 0 });
 });
