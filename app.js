@@ -53,6 +53,7 @@ app.get('/chat', (req, res) => {
   res.render('chat');
 });
 
+
 app.get('/games', (req, res) => {
   res.render('games');
 });
