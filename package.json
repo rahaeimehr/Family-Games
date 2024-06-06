@@ -18,6 +18,7 @@
     "geoip-lite": "^1.4.10",
     "moment-timezone": "^0.5.45",
     "mysql2": "^3.9.7",
+    "openai": "^4.48.3",
     "socket.io": "^4.7.5"
   },
   "devDependencies": {
