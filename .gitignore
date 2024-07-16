@@ -1,4 +1,5 @@
-node_module
+node_modules
+.env
 log.txt
 *.pem
 *.key
