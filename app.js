@@ -26,7 +26,7 @@ app.use((req, res, next) => {
   const ipInfo = checkIP(req.ip, req.headers['user-agent']);
   
   with(ipInfo) {
-    logger.writeText(`${city} ${ip} ${req.url}\n --> ${deviceType}`);
+    logger.writeText(`[${city}] ${ip} ${req.url}\n --> ${deviceType}`);
   }  
   next();
 });

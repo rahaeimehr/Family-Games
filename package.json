@@ -19,6 +19,8 @@
     "geoip-lite": "^1.4.10",
     "moment-timezone": "^0.5.45",
     "mysql2": "^3.9.7",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
     "socket.io": "^4.7.5"
   },
   "devDependencies": {

@@ -80,3 +80,10 @@ exports.profileForm = (req, res) => {
   };  
   res.render('profile', { status: 0, formData: formData });
 };
+
+exports.firendsSection = (req, res) => {
+  const formData = {
+    username: ''
+  };  
+  res.render('friends', { status: 0, formData: formData });
+};

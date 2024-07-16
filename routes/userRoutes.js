@@ -10,6 +10,7 @@ router.get('/profile', userController.profileForm);
 router.get('/login', userController.loginForm);
 router.post('/login', userController.loginUser);
 
+router.get('/friends', userController.firendsSection);
 
 
 router.get('/logout', userController.logoutUser);
